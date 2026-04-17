@@ -1,48 +1,79 @@
 # AI Research Assistant
 
-Full-stack research workflow assistant for analyzing papers, generating literature reviews, identifying research gaps, drafting grant proposals, and supporting paper writing.
+AI Research Assistant is a full-stack platform for academic research workflows. It helps users upload and analyze research papers, generate literature reviews, identify research gaps, draft grant proposals, and support paper writing through an AI-assisted interface.
 
-## Stack
+## Why This Project
 
-- Frontend: React + Vite
-- Backend: FastAPI + SQLAlchemy
+Research workflows are often fragmented across PDFs, notes, search tools, and writing environments. This project brings those steps into one application so researchers can move from source material to structured outputs faster.
+
+## Core Capabilities
+
+- Upload and process research papers
+- Generate literature reviews from selected sources
+- Identify research gaps within a topic area
+- Draft grant proposals from research objectives
+- Support paper writing with AI-generated structured content
+- Maintain user-authenticated project data and paper history
+
+## Tech Stack
+
+- Frontend: React, Vite
+- Backend: FastAPI, SQLAlchemy
 - Database: PostgreSQL
-- Queue/Cache: Redis
-- AI + Retrieval: Anthropic, LangChain, FAISS, sentence-transformers
+- Cache / Queue: Redis
+- AI / Retrieval: Anthropic, LangChain, FAISS, sentence-transformers
+- Containerization: Docker Compose
 
-## Included In This Repository
+## Repository Scope
 
-This repository is intentionally limited to professional project essentials:
+This repository intentionally contains only professional project essentials:
 
 - application source code
 - dependency manifests
-- Docker setup
 - environment template
-- minimal project documentation
+- Docker configuration
+- contributor and security documentation
 
-Generated assets, local databases, uploaded papers, indexes, virtual environments, reports, presentation files, and personal working documents are excluded from version control.
+The repository does not track local databases, uploaded files, vector indexes, virtual environments, generated build output, or personal research artifacts.
 
 ## Project Structure
 
 ```text
-backend/    FastAPI API, agents, models, database, and tools
+backend/    FastAPI API, agents, models, database access, and tools
 frontend/   React application built with Vite
+.github/    GitHub workflow and collaboration templates
 ```
 
-## Local Setup
+## Quick Start
 
-### 1. Backend
+### Prerequisites
+
+- Python 3.11+
+- Node.js 18+
+- PostgreSQL
+- Redis
+
+### 1. Configure environment variables
+
+Create a backend environment file from the example:
+
+```bash
+cp .env.example backend/.env
+```
+
+Update the placeholder values in `backend/.env` before starting the app.
+
+### 2. Start the backend
 
 ```bash
 cd backend
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-cp ../.env.example .env
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-### 2. Frontend
+### 3. Start the frontend
 
 ```bash
 cd frontend
@@ -52,7 +83,9 @@ npm run dev
 
 The frontend runs on `http://localhost:3000` and proxies API calls to `http://localhost:8000`.
 
-## Docker
+## Docker Setup
+
+Run the local services with Docker Compose:
 
 ```bash
 docker compose up --build
@@ -66,7 +99,7 @@ This starts:
 
 ## Environment Variables
 
-Copy [`.env.example`](/Users/ashishshekhar/ai-research-assistant/.env.example) to `backend/.env` for local development and replace placeholder values before running the app.
+The starter template lives in [`.env.example`](/Users/ashishshekhar/ai-research-assistant/.env.example).
 
 Important variables include:
 
@@ -76,9 +109,44 @@ Important variables include:
 - `SECRET_KEY`
 - `FRONTEND_URL`
 - `BACKEND_URL`
+- `FAISS_INDEX_PATH`
+- `UPLOAD_DIR`
 
-## Notes
+## Development Commands
 
-- Do not commit real `.env` files or API keys.
-- Do not commit generated uploads, local databases, or FAISS indexes.
-- If any credentials were previously stored locally, rotate them before publishing the repo.
+Common local commands:
+
+```bash
+make backend
+make frontend
+make docker-up
+make docker-down
+```
+
+If `make` is unavailable, run the underlying commands directly from the relevant directory.
+
+## API Surface
+
+The backend currently exposes routes for:
+
+- authentication
+- paper upload and analysis
+- literature review generation
+- research gap identification
+- grant proposal generation
+- paper drafting support
+
+## Professional Repo Standards
+
+- Never commit real `.env` files or API keys
+- Never commit uploaded documents, local databases, or FAISS indexes
+- Keep changes focused and reviewable
+- Document setup changes in the README or contributing guide
+
+## Security
+
+If you discover a vulnerability or accidentally expose a secret during development, rotate the credential immediately and report the issue privately. See [SECURITY.md](/Users/ashishshekhar/ai-research-assistant/SECURITY.md).
+
+## Contributing
+
+Contribution guidance is available in [CONTRIBUTING.md](/Users/ashishshekhar/ai-research-assistant/CONTRIBUTING.md).
