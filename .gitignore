@@ -1,0 +1,78 @@
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# GitHub / env
+.env
+.env.*
+!.env.example
+backend/.env
+frontend/.env
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+backend/venv/
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# Runtime data
+*.db
+*.sqlite
+*.sqlite3
+backend/research_assistant.db
+backend/uploads/
+backend/faiss_indexes/
+
+# Logs / temp
+*.log
+tmp/
+temp/
+
+# Office docs / exports / archives
+*.zip
+*.pdf
+*.doc
+*.docx
+*.ppt
+*.pptx
+*.xls
+*.xlsx
+~$*
+
+# Project-specific non-source artifacts at repo root
+extra1/
+submission/
+zi7w06P1
+ziXlnOk0
+zij13wrf
+zipv9Sdr
+$FILE_PATH
+
+# Backups
+*.backup
+frontend/src/App.jsx.backup
+
+# Working notes and manuscript artifacts kept outside the product repo
+*_Inputs.md
+bib_keys.txt
+used_keys.txt
+generate_research_guide.py
+*.tex
+*.bib
+backend/test_upload.txt
+frontend/Dockerfile
+backend/app/core/config.py[ ]

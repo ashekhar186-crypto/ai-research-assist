@@ -1,0 +1,47 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+# BACKEND DEPENDENCIES — AI Research Assistant (Fixed for Mac M1/M2/M3)
+# Install: pip install -r requirements.txt
+# ═══════════════════════════════════════════════════════════════════════════════
+
+# ─── Web Framework ────────────────────────────────────────────────────────────
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+gunicorn==22.0.0
+python-multipart==0.0.9
+
+# ─── Database ─────────────────────────────────────────────────────────────────
+sqlalchemy[asyncio]==2.0.35
+asyncpg==0.29.0
+alembic==1.13.2
+psycopg2-binary==2.9.9
+
+# ─── Authentication & Security ────────────────────────────────────────────────
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.2.0
+
+# ─── AI / Claude API ─────────────────────────────────────────────────────────
+anthropic==0.34.2
+langchain==0.3.0
+langchain-community==0.3.0
+langchain-anthropic==0.2.3
+
+# ─── Vector Store & Embeddings ────────────────────────────────────────────────
+sentence-transformers==3.1.1
+faiss-cpu==1.9.0.post1
+tiktoken==0.7.0
+
+# ─── Document Processing ──────────────────────────────────────────────────────
+PyMuPDF==1.25.3
+pdfminer.six==20231228
+python-docx==1.1.2
+
+# ─── Task Queue ───────────────────────────────────────────────────────────────
+celery[redis]==5.4.0
+redis==5.0.8
+
+# ─── HTTP & Networking ───────────────────────────────────────asyncpg==0.29.0
+email-validator>=2.0.0
+aiofiles
+python-multipart
+email-validator
